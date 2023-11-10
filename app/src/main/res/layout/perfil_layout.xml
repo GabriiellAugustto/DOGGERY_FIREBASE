@@ -18,8 +18,8 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="350dp"
-        android:layout_height="350dp"
-        android:layout_marginBottom="100dp"
+        android:layout_height="400dp"
+        android:layout_marginBottom="80dp"
         app:cardCornerRadius="30dp">
 
 
@@ -53,6 +53,14 @@
                 android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/user"
                 android:hint="E_mail"
+                android:padding="20dp" />
+
+            <TextView
+                android:id="@+id/txtelefone"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/user"
+                android:hint="Telefone"
                 android:padding="20dp" />
 
             <Button
