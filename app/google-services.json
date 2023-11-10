@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "431143207512",
+    "project_id": "doggery-firebase",
+    "storage_bucket": "doggery-firebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:431143207512:android:72ed46290aa4202142c02d",
+        "android_client_info": {
+          "package_name": "com.example.doggeryfirebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQX8RqNnIRiOxHclznFUjqNfV2ZkjzLQY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
