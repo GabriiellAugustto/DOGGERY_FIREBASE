@@ -10,22 +10,33 @@
     tools:context=".CadastroActivity">
 
     <ImageView
+        android:id="@+id/imgvoltar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/back"
+        android:layout_gravity="left"/>
+
+
+    <ImageView
+        android:id="@+id/imgperf"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:src="@drawable/dog_logo"
-        android:layout_marginBottom="40dp"/>
+        android:src="@drawable/dog_logo" />
 
 
-    <androidx.cardview.widget.CardView
+
+<androidx.cardview.widget.CardView
         android:layout_width="350dp"
-        android:layout_height="400dp"
+        android:layout_height="420dp"
         android:layout_marginBottom="100dp"
-        app:cardCornerRadius="30dp">
+        app:cardCornerRadius="30dp"
+        android:layout_marginTop="10dp"
+        >
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="30dp"
+            android:layout_margin="10dp"
             android:text="Cadastro"
             android:textColor="#685453"
             android:textSize="30dp"
@@ -36,7 +47,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center|top"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_margin="10dp">
 
             <EditText
                 android:id="@+id/edtnome"
@@ -45,6 +57,13 @@
                 android:layout_marginTop="40dp"
                 android:drawableLeft="@drawable/user"
                 android:hint="Nome"
+                android:padding="20dp" />
+            <EditText
+                android:id="@+id/edtfone"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/phone"
+                android:hint="Telefone"
                 android:padding="20dp" />
 
             <EditText
@@ -55,13 +74,6 @@
                 android:hint="E_mail"
                 android:padding="20dp" />
 
-            <EditText
-                android:id="@+id/edtfone"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/phone"
-                android:hint="Telefone"
-                android:padding="20dp" />
 
             <EditText
                 android:id="@+id/edtsenha"
@@ -69,6 +81,7 @@
                 android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/key"
                 android:hint="Senha"
+                android:inputType="textPassword"
                 android:padding="20dp" />
 
             <Button

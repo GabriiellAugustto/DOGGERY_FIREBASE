@@ -42,6 +42,7 @@
                 android:layout_height="wrap_content"
                 android:hint="Senha"
                 android:padding="20dp"
+                android:inputType="textPassword"
                 android:drawableLeft="@drawable/key" />
 
             <Button

@@ -10,16 +10,33 @@
     android:background="@drawable/fundo">
 
     <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/back"
+        android:layout_gravity="left"/>
+
+    <ImageView
+        android:id="@+id/imgperf"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:src="@drawable/dog_logo"
-        android:layout_marginBottom="40dp"/>
+        android:src="@drawable/avatarh" />
+
+    <TextView
+        android:id="@+id/edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Editar Perfil"
+        android:textColor="#685453"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:layout_gravity="center|bottom"/>
+
 
 
     <androidx.cardview.widget.CardView
         android:layout_width="350dp"
-        android:layout_height="400dp"
-        android:layout_marginBottom="80dp"
+        android:layout_height="450dp"
+        android:layout_marginBottom="70dp"
         app:cardCornerRadius="30dp">
 
 
@@ -28,16 +45,19 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center|top"
             android:orientation="vertical">
+
+
             <TextView
-                android:layout_width="wrap_content"
+                android:id="@+id/txbio"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="30dp"
-                android:text="Perfil"
+                android:layout_marginBottom="10dp"
+                android:hint="Bio"
+                android:gravity="center"
                 android:textColor="#685453"
-                android:textSize="30dp"
-                android:textStyle="bold"
-                android:layout_gravity="center|top"
-                android:layout_marginTop="30dp"/>
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:padding="30dp"/>
 
             <TextView
                 android:id="@+id/txnome"
@@ -56,10 +76,10 @@
                 android:padding="20dp" />
 
             <TextView
-                android:id="@+id/txtelefone"
+                android:id="@+id/txfone"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/user"
+                android:drawableLeft="@drawable/phone"
                 android:hint="Telefone"
                 android:padding="20dp" />
 

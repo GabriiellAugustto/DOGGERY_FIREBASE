@@ -1,14 +1,20 @@
 package com.example.doggeryfirebase;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -28,10 +34,12 @@ import java.util.Map;
 
 public class CadastroActivity extends AppCompatActivity {
 
-    EditText edtnome,edtemail,edtsenha;
+    EditText edtnome,edtemail,edtsenha,edtfone;
     Button btcad;
     String[] mensagens = {"Prencha Todos os Campos", "Cadastro Realizado Com Sucesso"};
+    ImageView imgvoltar;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,8 +49,11 @@ public class CadastroActivity extends AppCompatActivity {
         edtemail = findViewById(R.id.edtemail);
         edtsenha = findViewById(R.id.edtsenha);
         btcad = findViewById(R.id.btcad);
+        edtfone = findViewById(R.id.edtfone);
+        imgvoltar = findViewById(R.id. imgvoltar);
 
 
+        //cadastrando  e autentifincando usu//
         btcad.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -97,15 +108,25 @@ public class CadastroActivity extends AppCompatActivity {
                 }
             }
         });
-    }
+        imgvoltar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+            }
+        });
 
+
+    }
+    //Salavndo no banco de dados//
     private void SalvarDados() {
         String nome = edtnome.getText().toString();
+        String telefone = edtfone.getText().toString();
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
         Map<String, String> usuarios = new HashMap<>();
         usuarios.put("nome",nome);
+        usuarios.put("telefone",telefone);
 
         String usuarioid = FirebaseAuth.getInstance().getCurrentUser().getUid();
 
@@ -124,4 +145,6 @@ public class CadastroActivity extends AppCompatActivity {
                     }
                 });
     }
+
+
 }
