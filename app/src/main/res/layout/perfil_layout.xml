@@ -4,33 +4,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PerfilActivity"
-    android:orientation="vertical"
+    android:background="@drawable/fundo"
     android:gravity="center"
-    android:background="@drawable/fundo">
+    android:orientation="vertical"
+    tools:context=".PerfilActivity">
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/back"
-        android:layout_gravity="left"/>
+        android:layout_gravity="left"
+        android:src="@drawable/back" />
 
-    <ImageView
-        android:id="@+id/imgperf"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:src="@drawable/avatarh" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="#685453"
+        android:orientation="vertical"
+        app:cardCornerRadius="80dp">
+
+        <ImageView
+            android:id="@+id/imgperf1"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/avatarh" />
+    </androidx.cardview.widget.CardView>
 
     <TextView
         android:id="@+id/edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center|bottom"
         android:text="Editar Perfil"
         android:textColor="#685453"
         android:textSize="15sp"
-        android:textStyle="bold"
-        android:layout_gravity="center|bottom"/>
-
+        android:textStyle="bold" />
 
 
     <androidx.cardview.widget.CardView
@@ -51,13 +60,13 @@
                 android:id="@+id/txbio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:hint="Bio"
-                android:gravity="center"
-                android:textColor="#685453"
                 android:layout_gravity="center"
                 android:layout_marginTop="30dp"
-                android:padding="30dp"/>
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:hint="Bio"
+                android:padding="30dp"
+                android:textColor="#685453" />
 
             <TextView
                 android:id="@+id/txnome"

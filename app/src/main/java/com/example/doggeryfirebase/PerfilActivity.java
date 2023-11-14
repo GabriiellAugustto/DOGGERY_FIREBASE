@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
@@ -29,6 +30,9 @@ public class PerfilActivity extends AppCompatActivity {
     String nomeusu,emailusu,foneusu,biousu;
 
 
+    ImageView imgperf1;
+    Uri imgusu;
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +45,7 @@ public class PerfilActivity extends AppCompatActivity {
         txfone = findViewById(R.id.txfone);
         edit = findViewById(R.id.edit);
         txbio = findViewById(R.id.txbio);
+        imgperf1 = findViewById(R.id.imgperf1);
 
 
 
