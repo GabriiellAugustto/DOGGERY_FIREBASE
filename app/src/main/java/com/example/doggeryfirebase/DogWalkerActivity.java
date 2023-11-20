@@ -7,13 +7,21 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
 import com.google.android.material.carousel.CarouselLayoutManager;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.annotation.Nullable;
 
 public class DogWalkerActivity extends AppCompatActivity {
     List<User> userList;
@@ -26,6 +34,8 @@ public class DogWalkerActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dog_walker_layout);
+
+
 
         btnvoltar = findViewById(R.id.btnvoltar);
 
@@ -41,24 +51,29 @@ public class DogWalkerActivity extends AppCompatActivity {
         userList = new ArrayList<>();
 
         userList.add(
-                new User("Augusto","35988214598"));
+                new User(""
+                        ,"","",""));
 
         userList.add(
-                new User("Jesus","359876523"));
+                new User("",
+                        "","",""));
 
         userList.add(
-                new User("Pedro","11326598741"));
+                new User("",
+                        "","",""));
 
         userList.add(
-                new User("Tiago","11362543265"));
+                new User("",
+                        "","",""));
 
-        MyAdapter adapter = new MyAdapter(getApplicationContext(),userList);
+        MyAdapter adapter = new MyAdapter(getApplicationContext(), userList);
 
-        idListaUser.setLayoutManager(new GridLayoutManager(getApplicationContext(),1));
+        idListaUser.setLayoutManager(new GridLayoutManager(getApplicationContext(), 1));
 
         idListaUser.setHasFixedSize(true);
 
         idListaUser.setAdapter(adapter);
 
     }
+
 }

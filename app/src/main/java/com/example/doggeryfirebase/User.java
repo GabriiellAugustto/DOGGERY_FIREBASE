@@ -3,8 +3,24 @@ package com.example.doggeryfirebase;
 public class User {
     String nome;
     String Telefone;
-
     String foto;
+
+    String bio;
+
+    public String getBio() {
+        return bio;
+    }
+
+    public void setBio(String bio) {
+        this.bio = bio;
+    }
+
+    public User(String nome, String telefone, String foto, String bio) {
+        this.nome = nome;
+        Telefone = telefone;
+        this.foto = foto;
+        this.bio = bio;
+    }
 
     public String getNome() {
         return nome;
@@ -30,9 +46,6 @@ public class User {
         this.foto = foto;
     }
 
-    public User(String nome, String telefone) {
-        this.nome = nome;
-        Telefone = telefone;
-        this.foto = foto;
+
     }
-}
+

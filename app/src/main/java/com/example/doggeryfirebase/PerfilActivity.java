@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -13,38 +12,38 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.google.android.gms.auth.api.signin.internal.Storage;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.internal.StorageReferenceUri;
+import com.squareup.picasso.Picasso;
+
+import java.net.URL;
 
 public class PerfilActivity extends AppCompatActivity {
 
-    TextView txnome,txemail,txfone,edit,txbio;
+    TextView txnome, txemail, txfone, edit, txbio;
     Button btsair;
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
-    FirebaseStorage fs= FirebaseStorage.getInstance();
+
     String nomeusu;
     String emailusu;
     String foneusu;
     String biousu;
-    String fotousu;
+  String fotousu ;
 
 
-    ImageView fotoperfil,btvol;
+    ImageView fotoperfil, btvol;
 
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.perfil_layout);
+
 
         txnome = findViewById(R.id.txnome);
         txemail = findViewById(R.id.txemail);
@@ -97,21 +96,29 @@ public class PerfilActivity extends AppCompatActivity {
         foneusu = FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber();
         emailusu = FirebaseAuth.getInstance().getCurrentUser().getEmail();
         nomeusu = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
+
+
         DocumentReference documentReference = db.collection("Usuarios").document(nomeusu);
         documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
             @Override
-            public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException error) {
-
-                if (documentSnapshot != null){
-                    txnome.setText(documentSnapshot.getString("nome"));
-                    txfone.setText(documentSnapshot.getString("telefone"));
-                    txbio.setText(documentSnapshot.getString("bio"));
+            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                if (value !=null){
+                    txnome.setText(value.getString("nome"));
+                    txbio.setText(value.getString("bio"));
+                    txfone.setText(value.getString("telefone"));
                     txemail.setText(emailusu);
 
                 }
-
             }
         });
-    }
 
+
+
+    }
 }
+
+
+
+
+

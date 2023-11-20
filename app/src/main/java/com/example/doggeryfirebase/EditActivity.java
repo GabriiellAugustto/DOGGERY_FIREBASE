@@ -1,7 +1,6 @@
 package com.example.doggeryfirebase;
 
 
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -45,7 +44,7 @@ public class EditActivity extends AppCompatActivity {
 
     EditText bioed, nomeed, foneed;
     Button btsalvar;
-
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
     ImageView imgvoltar;
     ImageView imgperf;
     Uri imgusu;
@@ -95,7 +94,7 @@ public class EditActivity extends AppCompatActivity {
                 } else {
 
                     SalvarFoto();
-                    Salvandodados();
+
 
                     Snackbar snackbar = Snackbar.make(v, "Salvo com Sucessso", Snackbar.LENGTH_SHORT);
                     snackbar.setBackgroundTint(Color.WHITE);
@@ -117,16 +116,17 @@ public class EditActivity extends AppCompatActivity {
             }
         });
     }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent dados) {
         super.onActivityResult(requestCode, resultCode, dados);
         if (resultCode == Activity.RESULT_OK) {
             if (resultCode == 1) {
             }
-            imgusu= dados.getData();
+            imgusu = dados.getData();
             Bitmap bitmap;
             try {
-                bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(),imgusu);
+                bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), imgusu);
                 imgperf.setImageDrawable(new BitmapDrawable(bitmap));
             } catch (IOException e) {
                 throw new RuntimeException(e);
@@ -135,11 +135,10 @@ public class EditActivity extends AppCompatActivity {
         }
     }
 
-
-    //salvando Foto//
-    private  void  SalvarFoto(){
+    //salvando//
+    private void SalvarFoto() {
         String perfil = UUID.randomUUID().toString();
-        StorageReference reference=FirebaseStorage.getInstance().getReference("/ImgPerf/"+perfil);
+        StorageReference reference = FirebaseStorage.getInstance().getReference("/ImgPerf/" + perfil);
         reference.putFile(imgusu).
                 addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                     @Override
@@ -147,8 +146,37 @@ public class EditActivity extends AppCompatActivity {
                         reference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                             @Override
                             public void onSuccess(Uri uri) {
-                                Log.i("teste",uri.toString());
+                                Log.i("teste", uri.toString());
 
+                                String foto = uri.toString();
+                                String nome = nomeed.getText().toString();
+                                String telefone = foneed.getText().toString();
+                                String bio = bioed.getText().toString();
+
+                                Map<String, String> usuarios = new HashMap<>();
+                                usuarios.put("foto", foto);
+                                usuarios.put("nome", nome);
+                                usuarios.put("telefone", telefone);
+                                usuarios.put("bio", bio);
+                                ;
+
+
+                                String usuarioid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+                                DocumentReference documentReference = db.collection("Usuarios").document(usuarioid);
+                                documentReference.set(usuarios).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                            @Override
+                                            public void onSuccess(Void unused) {
+                                                Log.d("db", "Sucesso");
+
+
+                                            }
+                                        })
+                                        .addOnFailureListener(new OnFailureListener() {
+                                            @Override
+                                            public void onFailure(@NonNull Exception e) {
+                                                Log.d("db_erro", "Erro");
+                                            }
+                                        });
 
                             }
 
@@ -158,28 +186,24 @@ public class EditActivity extends AppCompatActivity {
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Log.e("Teste",e.getMessage(),e);
+                        Log.e("Teste", e.getMessage(), e);
                     }
                 });
-
-
-
+    }
     }
 
 
     //Salavndo no banco de dados//
-    private void Salvandodados() {
+    /*private void Salvandodados() {
         String nome = nomeed.getText().toString();
         String telefone = foneed.getText().toString();
         String bio = bioed.getText().toString();
 
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
 
         Map<String, String> usuarios = new HashMap<>();
         usuarios.put("nome", nome);
         usuarios.put("telefone", telefone);
         usuarios.put("bio", bio);
-
 
         String usuarioid = FirebaseAuth.getInstance().getCurrentUser().getUid();
         DocumentReference documentReference = db.collection("Usuarios").document(usuarioid);
@@ -198,7 +222,7 @@ public class EditActivity extends AppCompatActivity {
                     }
                 });
     }
-}
+}*/
 
 
 
