@@ -35,8 +35,6 @@ public class DogWalkerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dog_walker_layout);
 
-
-
         btnvoltar = findViewById(R.id.btnvoltar);
 
         btnvoltar.setOnClickListener(new View.OnClickListener() {

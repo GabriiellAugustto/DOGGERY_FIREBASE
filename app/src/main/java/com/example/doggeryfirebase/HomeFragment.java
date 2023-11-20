@@ -37,7 +37,7 @@ public class HomeFragment extends Fragment {
         ibchat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity().getApplicationContext(), ChatActivity.class));
+                startActivity(new Intent(getActivity().getApplicationContext(), ContatosActivity.class));
             }
         });
 

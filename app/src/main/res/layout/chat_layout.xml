@@ -21,16 +21,10 @@
             android:layout_gravity="top"
             android:background="#B3A455EB">
 
-            <ImageView
-                android:id="@+id/btvolt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/back"
-                android:layout_gravity="center"/>
 
             <ImageView
                 android:id="@+id/ibperfil"
-                android:layout_marginLeft="130dp"
+                android:layout_marginLeft="160dp"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:background="#00FFFFFF"

@@ -12,27 +12,15 @@ import android.widget.Toolbar;
 
 public class ChatActivity extends AppCompatActivity {
 
-    ImageView btnvolt;
-
-
 
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.chat_layout);
-        btnvolt = findViewById(R.id.btvolt);
-
-        btnvolt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), MenuActivity.class));
-            }
-        });
 
 
 
-
-            }
+    }
 
 }

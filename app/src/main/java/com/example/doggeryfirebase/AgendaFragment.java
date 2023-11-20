@@ -44,7 +44,7 @@ public class AgendaFragment extends Fragment {
         userList.add(
                 new User("","","",""));
 
-        MyAdapter adapter = new MyAdapter(getContext(),userList);
+        MyAdapterAgenda adapter = new MyAdapterAgenda(getContext(),userList);
 
         listaage.setLayoutManager(new GridLayoutManager(getContext(),1));
 
