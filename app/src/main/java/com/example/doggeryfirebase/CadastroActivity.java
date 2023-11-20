@@ -34,7 +34,7 @@ import java.util.Map;
 
 public class CadastroActivity extends AppCompatActivity {
 
-    EditText edtnome,edtemail,edtsenha,edtfone;
+    EditText edtnome, edtemail, edtsenha, edtfone;
     Button btcad;
     String[] mensagens = {"Prencha Todos os Campos", "Cadastro Realizado Com Sucesso"};
     ImageView imgvoltar;
@@ -50,7 +50,7 @@ public class CadastroActivity extends AppCompatActivity {
         edtsenha = findViewById(R.id.edtsenha);
         btcad = findViewById(R.id.btcad);
         edtfone = findViewById(R.id.edtfone);
-        imgvoltar = findViewById(R.id. imgvoltar);
+        imgvoltar = findViewById(R.id.imgvoltar);
 
 
         //cadastrando  e autentifincando usu//
@@ -59,66 +59,66 @@ public class CadastroActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 String nome = edtnome.getText().toString();
-                String email= edtemail.getText().toString();
+                String email = edtemail.getText().toString();
                 String senha = edtsenha.getText().toString();
 
-                if (nome.isEmpty() || email.isEmpty() || senha.isEmpty()){
-                    Snackbar snackbar = Snackbar.make(v,mensagens[0],Snackbar.LENGTH_SHORT);
+                if (nome.isEmpty() || email.isEmpty() || senha.isEmpty()) {
+                    Snackbar snackbar = Snackbar.make(v, mensagens[0], Snackbar.LENGTH_SHORT);
                     snackbar.setBackgroundTint(Color.WHITE);
                     snackbar.setTextColor(Color.BLACK);
                     snackbar.show();
 
-                }else {
+                } else {
 
-                    FirebaseAuth.getInstance().createUserWithEmailAndPassword(email,senha)
+                    FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, senha)
                             .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
 
-                     if (task.isSuccessful()){
+                                    if (task.isSuccessful()) {
 
-                         SalvarDados();
+                                        Snackbar snackbar = Snackbar.make(v, mensagens[1], Snackbar.LENGTH_SHORT);
+                                        snackbar.setBackgroundTint(Color.WHITE);
+                                        snackbar.setTextColor(Color.BLACK);
+                                        snackbar.show();
 
-                         Snackbar snackbar = Snackbar.make(v,mensagens[1 ],Snackbar.LENGTH_SHORT);
-                         snackbar.setBackgroundTint(Color.WHITE);
-                         snackbar.setTextColor(Color.BLACK);
-                         snackbar.show();
+                                    } else {
+                                        String erro;
+                                        try {
+                                            throw task.getException();
+                                        } catch (FirebaseAuthWeakPasswordException e) {
+                                            erro = "Senha Invalida";
+                                        } catch (FirebaseAuthUserCollisionException e) {
+                                            erro = "Conta ja Cadastrada ";
+                                        } catch (FirebaseAuthInvalidCredentialsException e) {
+                                            erro = "Email invalido";
+                                        } catch (Exception e) {
+                                            erro = "Erro ao cadastrar";
+                                        }
+                                        Snackbar snackbar = Snackbar.make(v, erro, Snackbar.LENGTH_SHORT);
+                                        snackbar.setBackgroundTint(Color.WHITE);
+                                        snackbar.setTextColor(Color.BLACK);
+                                        snackbar.show();
 
-                     }else {
-                         String erro;
-                         try {
-                            throw task.getException();
-                         }catch (FirebaseAuthWeakPasswordException e ){
-                             erro ="Senha Invalida";
-                         }catch (FirebaseAuthUserCollisionException e){
-                             erro = "Conta ja Cadastrada ";
-                         }catch (FirebaseAuthInvalidCredentialsException e){
-                             erro = "Email invalido";
-                         }catch (Exception e){
-                             erro = "Erro ao cadastrar";
-                         }
-                         Snackbar snackbar = Snackbar.make(v,erro,Snackbar.LENGTH_SHORT);
-                         snackbar.setBackgroundTint(Color.WHITE);
-                         snackbar.setTextColor(Color.BLACK);
-                         snackbar.show();
-
-                     }
-                     }
-                    });
+                                    }
+                                }
+                            });
                 }
             }
         });
         imgvoltar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
             }
         });
 
 
     }
+}
+
     //Salavndo no banco de dados//
-    private void SalvarDados() {
+   /* private void SalvarDados() {
         String nome = edtnome.getText().toString();
         String telefone = edtfone.getText().toString();
 
@@ -143,8 +143,4 @@ public class CadastroActivity extends AppCompatActivity {
                     public void onFailure(@NonNull Exception e) {
                         Log.d("db_erro","Erro");
                     }
-                });
-    }
-
-
-}
+                });*/

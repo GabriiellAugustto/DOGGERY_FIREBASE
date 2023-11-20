@@ -4,22 +4,25 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.gms.auth.api.signin.internal.Storage;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.internal.StorageReferenceUri;
 
 public class PerfilActivity extends AppCompatActivity {
 
@@ -27,11 +30,15 @@ public class PerfilActivity extends AppCompatActivity {
     Button btsair;
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
-    String nomeusu,emailusu,foneusu,biousu;
+    FirebaseStorage fs= FirebaseStorage.getInstance();
+    String nomeusu;
+    String emailusu;
+    String foneusu;
+    String biousu;
+    String fotousu;
 
 
-    ImageView imgperf1;
-    Uri imgusu;
+    ImageView fotoperfil,btvol;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -45,8 +52,18 @@ public class PerfilActivity extends AppCompatActivity {
         txfone = findViewById(R.id.txfone);
         edit = findViewById(R.id.edit);
         txbio = findViewById(R.id.txbio);
-        imgperf1 = findViewById(R.id.imgperf1);
+        fotoperfil = findViewById(R.id.fotoperfil);
+        btvol = findViewById(R.id.btvol);
 
+        btvol.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PerfilActivity.this, MenuActivity.class);
+                startActivity(intent);
+                finish();
+
+            }
+        });
 
 
         edit.setOnClickListener(new View.OnClickListener() {
@@ -71,9 +88,11 @@ public class PerfilActivity extends AppCompatActivity {
 
     }
 
+
     @Override
     protected void onStart() {
         super.onStart();
+
         biousu = FirebaseAuth.getInstance().getCurrentUser().toString();
         foneusu = FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber();
         emailusu = FirebaseAuth.getInstance().getCurrentUser().getEmail();

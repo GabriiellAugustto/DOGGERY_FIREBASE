@@ -10,6 +10,7 @@
     tools:context=".PerfilActivity">
 
     <ImageView
+        android:id="@+id/btvol"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="left"
@@ -25,7 +26,7 @@
         app:cardCornerRadius="80dp">
 
         <ImageView
-            android:id="@+id/imgperf1"
+            android:id="@+id/fotoperfil"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:src="@drawable/avatarh" />

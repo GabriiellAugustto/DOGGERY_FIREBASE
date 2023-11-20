@@ -13,10 +13,25 @@
         android:theme="@style/Theme.DOGGERYFIREBASE"
         tools:targetApi="31">
         <activity
-            android:name=".EditActivity"
+            android:name=".PerfilDoggeryActivity"
             android:exported="false" />
         <activity
-            android:name=".EditarPerfilActivity"
+            android:name=".ContatosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ChatActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DogWalkerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BemVindoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EditActivity"
             android:exported="false" />
         <activity
             android:name=".PerfilActivity"

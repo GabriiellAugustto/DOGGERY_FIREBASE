@@ -103,7 +103,7 @@
         android:layout_height="48dp"
         android:layout_gravity="center"
         android:layout_marginTop="40dp"
-        android:backgroundTint="#685453"
+        android:backgroundTint="#AF78E0"
         android:text="Salvar"
         android:textSize="20sp" />
 

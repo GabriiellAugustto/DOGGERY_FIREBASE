@@ -75,7 +75,7 @@ public class LoginActivity extends AppCompatActivity {
                                 new Handler().postDelayed(new Runnable() {
                                     @Override
                                     public void run() {
-                                        Intent intent = new Intent(LoginActivity.this, PerfilActivity.class);
+                                        Intent intent = new Intent(LoginActivity.this, MenuActivity.class);
                                         startActivity(intent);
                                         finish();
 
@@ -105,7 +105,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onStart();
         FirebaseUser usuarioAtual = FirebaseAuth.getInstance().getCurrentUser();
         if (usuarioAtual != null){
-            Intent intent = new Intent(LoginActivity.this, PerfilActivity.class);
+            Intent intent = new Intent(LoginActivity.this, MenuActivity.class);
             startActivity(intent);
             finish();
 

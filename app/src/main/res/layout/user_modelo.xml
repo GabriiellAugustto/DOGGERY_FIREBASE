@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="100dp"
+    android:layout_gravity="top|center"
+    android:layout_marginBottom="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="30dp"
+    android:backgroundTint="#AF78E0"
+    android:id="@+id/cardperfil">
+
+        <LinearLayout
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center|left"
+            android:layout_margin="20dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/avatarh" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="150dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center|top"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:background="#AF78E0"
+            android:layout_marginLeft="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/nomecard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gabriel"
+                android:textColor="#111"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/fonecard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="35988219738"
+                android:textColor="#111"/>
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>

@@ -91,7 +91,7 @@
                 android:layout_height="48dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="30dp"
-                android:backgroundTint="#685453"
+                android:backgroundTint="#AF78E0"
                 android:text="Sign Up"
                 android:textSize="20sp" />
         </LinearLayout>
