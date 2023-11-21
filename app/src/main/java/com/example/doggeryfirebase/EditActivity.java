@@ -153,13 +153,13 @@ public class EditActivity extends AppCompatActivity {
                                 String telefone = foneed.getText().toString();
                                 String bio = bioed.getText().toString();
 
+                                User user = new User(foto,nome,telefone,bio);
+
                                 Map<String, String> usuarios = new HashMap<>();
                                 usuarios.put("foto", foto);
                                 usuarios.put("nome", nome);
                                 usuarios.put("telefone", telefone);
                                 usuarios.put("bio", bio);
-                                ;
-
 
                                 String usuarioid = FirebaseAuth.getInstance().getCurrentUser().getUid();
                                 DocumentReference documentReference = db.collection("Usuarios").document(usuarioid);

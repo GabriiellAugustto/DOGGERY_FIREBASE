@@ -4,108 +4,169 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EditActivity"
+    android:background="@drawable/fundo"
     android:orientation="vertical"
-    android:background="@drawable/fundo">
+    tools:context=".EditActivity">
 
-    <ImageView
-        android:id="@+id/imgvoltar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/back" />
-
-    <androidx.cardview.widget.CardView
-        android:layout_marginTop="40dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="30dp"
-        android:layout_gravity="center">
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_gravity="center"
-        app:cardCornerRadius="80dp"
-        android:backgroundTint="#685453">
-
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80FFFFFF"
+        android:orientation="vertical">
 
         <ImageView
-            android:id="@+id/imgperf"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:src="@drawable/avatarh"
-            />
-
-
-    </androidx.cardview.widget.CardView>
-
-            <EditText
-                android:id="@+id/bioed"
-                android:layout_width="230dp"
-                android:layout_height="180dp"
-                android:hint="Bio"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:textSize="20sp"
-                android:textStyle="bold"/>
-
-    </LinearLayout>
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="350dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="30dp"
-        app:cardCornerRadius="30dp"
-        android:layout_gravity="center">
-
-
-        <LinearLayout
+            android:id="@+id/imgvoltar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center|top"
-            android:orientation="vertical">
+            android:src="@drawable/back" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:backgroundTint="#685453"
+            android:orientation="vertical"
+            app:cardCornerRadius="80dp">
 
 
-            <EditText
-                android:id="@+id/nomeed"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/user"
-                android:hint="Nome"
-                android:layout_marginTop="30dp"
-                android:padding="20dp" />
+            <ImageView
+                android:id="@+id/imgperf"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/avatarh" />
 
 
+        </androidx.cardview.widget.CardView>
 
-            <EditText
-                android:id="@+id/foneed"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/phone"
-                android:hint="Telefone"
-                android:padding="20dp" />
-
-        </LinearLayout>
-
-    </androidx.cardview.widget.CardView>
-
-    <Button
-        android:id="@+id/btsalvar"
-        style="@style/Widget.Material3.Button"
-        android:layout_width="155dp"
-        android:layout_height="48dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="40dp"
-        android:backgroundTint="#AF78E0"
-        android:text="Salvar"
-        android:textSize="20sp" />
+        <androidx.cardview.widget.CardView
+            android:layout_width="350dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            app:cardCornerRadius="30dp">
 
 
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="330dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:contentDescription="bio"
+                app:boxBackgroundColor="#fff"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="30dp"
+                app:boxCornerRadiusBottomStart="30dp"
+                app:boxCornerRadiusTopEnd="30dp"
+                app:boxCornerRadiusTopStart="30dp"
+                app:boxStrokeColor="#090A0E">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/bioed"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Bio"
+                    android:gravity="center"
+                    android:maxLength="100"
+                    android:padding="20dp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <View
+            android:layout_width="300dp"
+            android:layout_margin="10dp"
+            android:layout_gravity="center"
+            android:layout_height="2dp"
+            android:background="#111" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="350dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            app:cardCornerRadius="30dp">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center|top"
+                android:orientation="vertical">
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="330dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="30dp"
+                    android:contentDescription="Nome"
+                    app:boxBackgroundColor="#fff"
+                    app:boxBackgroundMode="outline"
+                    app:boxCornerRadiusBottomEnd="30dp"
+                    app:boxCornerRadiusBottomStart="30dp"
+                    app:boxCornerRadiusTopEnd="30dp"
+                    app:boxCornerRadiusTopStart="30dp"
+                    app:boxStrokeColor="#090A0E">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/nomeed"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:drawableRight="@drawable/user"
+                        android:hint="Nome"
+                        android:maxLength="100"
+                        android:padding="20dp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="330dp"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:contentDescription="Telefone"
+                    app:boxBackgroundColor="#fff"
+                    app:boxBackgroundMode="outline"
+                    app:boxCornerRadiusBottomEnd="30dp"
+                    app:boxCornerRadiusBottomStart="30dp"
+                    app:boxCornerRadiusTopEnd="30dp"
+                    app:boxCornerRadiusTopStart="30dp"
+                    app:boxStrokeColor="#090A0E">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/foneed"
+                        android:phoneNumber="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:drawableRight="@drawable/phone"
+                        android:hint="Telefone"
+                        android:maxLength="100"
+                        android:padding="20dp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <View
+            android:layout_width="300dp"
+            android:layout_margin="20dp"
+            android:layout_gravity="center"
+            android:layout_height="2dp"
+            android:background="#111" />
+
+
+        <Button
+            android:id="@+id/btsalvar"
+            style="@style/Widget.Material3.Button"
+            android:layout_width="155dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:backgroundTint="#AF78E0"
+            android:text="Salvar"
+            android:textSize="20sp" />
+
+    </LinearLayout>
 </LinearLayout>

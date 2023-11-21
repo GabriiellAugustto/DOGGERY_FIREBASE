@@ -19,8 +19,9 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Target;
 
-import java.net.URL;
+import java.net.URLConnection;
 
 public class PerfilActivity extends AppCompatActivity {
 
@@ -33,7 +34,7 @@ public class PerfilActivity extends AppCompatActivity {
     String emailusu;
     String foneusu;
     String biousu;
-  String fotousu ;
+  Uri fotousu ;
 
 
     ImageView fotoperfil, btvol;
@@ -96,8 +97,7 @@ public class PerfilActivity extends AppCompatActivity {
         foneusu = FirebaseAuth.getInstance().getCurrentUser().getPhoneNumber();
         emailusu = FirebaseAuth.getInstance().getCurrentUser().getEmail();
         nomeusu = FirebaseAuth.getInstance().getCurrentUser().getUid();
-
-
+        fotousu = FirebaseAuth.getInstance().getCurrentUser().getPhotoUrl();
 
         DocumentReference documentReference = db.collection("Usuarios").document(nomeusu);
         documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
@@ -108,6 +108,8 @@ public class PerfilActivity extends AppCompatActivity {
                     txbio.setText(value.getString("bio"));
                     txfone.setText(value.getString("telefone"));
                     txemail.setText(emailusu);
+                    Picasso.get().load(value.getString("foto")).into(fotoperfil);
+
 
                 }
             }
