@@ -60,9 +60,6 @@ public class AgendaFragment extends Fragment {
 
 
 
-
-
-
         Uri fotousu = (Uri) FirebaseAuth.getInstance().getCurrentUser().getPhotoUrl();
         String nomeusu = (String) FirebaseAuth.getInstance().getCurrentUser().getUid();
         DocumentReference documentReference = db.collection("Usuarios").document(nomeusu);

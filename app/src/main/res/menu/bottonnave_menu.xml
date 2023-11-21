@@ -12,12 +12,5 @@
         android:title="" />
 
 
-    <item
-        android:id="@+id/menupaw"
-        android:icon="@drawable/paw"
-        android:title="" />
-
-
-
 
 </menu>

@@ -36,31 +36,32 @@ public class ContatosActivity extends AppCompatActivity {
         contatoslist = findViewById(R.id.chat2list);
         contatoslist.setLayoutManager(new GridLayoutManager(getApplicationContext(), 1));
         contatoslist.setHasFixedSize(true);
-
         db= FirebaseFirestore.getInstance();
         userList = new ArrayList<>();
         adapterChat2 = new MyAdapterChat2(getApplicationContext(),userList);
-
-
-        contatoslist = findViewById(R.id.chat2list);
-        userList = new ArrayList<>();
-
-        userList.add(
-                new User("","","",""));
-
-        userList.add(
-                new User("","","",""));
-
-        userList.add(
-                new User("","","",""));
-
-        userList.add(
-                new User("","","",""));
-
-        MyAdapterChat2 adapterChat2 = new MyAdapterChat2(getApplicationContext(),userList);
-        contatoslist.setLayoutManager(new GridLayoutManager(getApplicationContext(),1));
-        contatoslist.setHasFixedSize(true);
         contatoslist.setAdapter(adapterChat2);
+        puxandodobd();
+        userList.add(new User());
+    }
+
+    private void puxandodobd() {
+        db.collection("Usuarios")
+                .orderBy("nome", Query.Direction.DESCENDING)
+                .addSnapshotListener(new EventListener<QuerySnapshot>() {
+                    @Override
+                    public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                        if (error != null){
+                            Log.e("teste",error.getMessage());
+                        }
+                        for (DocumentChange dc : value.getDocumentChanges()){
+                            if (dc.getType()==DocumentChange.Type.ADDED){
+                                userList.add(dc.getDocument().toObject(User.class));
+                            }
+                            adapterChat2.notifyDataSetChanged();
+                        }
+                    }
+                });
+
 
     }
 }

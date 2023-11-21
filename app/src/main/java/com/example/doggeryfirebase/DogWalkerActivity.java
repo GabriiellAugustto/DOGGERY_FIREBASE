@@ -26,6 +26,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -55,37 +56,41 @@ public class DogWalkerActivity extends AppCompatActivity {
             }
         });
 
-
         idListaUser = findViewById(R.id.idListaUser);
         idListaUser.setHasFixedSize(true);
         idListaUser.setLayoutManager(new GridLayoutManager(getApplicationContext(),1));
-
         db = FirebaseFirestore.getInstance();
         userList = new ArrayList<>();
+        userList.add(new User());
         adapter = new MyAdapter(getApplicationContext(),userList);
-
-
-        idListaUser = findViewById(R.id.idListaUser);
-        userList = new ArrayList<>();
-
-        userList = new ArrayList<>();
-        userList.add(new User("", "", "", ""));
-        userList.add(new User("", "", "", ""));
-        userList.add(new User("", "", "", ""));
-        userList.add(new User("", "", "", ""));
-        userList.add(new User("", "", "", ""));
-
-
-        MyAdapter adapter = new MyAdapter(getApplicationContext(), userList);
-
-
-        idListaUser.setLayoutManager(new GridLayoutManager(getApplicationContext(), 1));
-
-        idListaUser.setHasFixedSize(true);
-
         idListaUser.setAdapter(adapter);
 
+
+        puxandodobd();
+
 }
+
+    private void puxandodobd() {
+        db.collection("Usuarios")
+                .orderBy("nome", Query.Direction.DESCENDING)
+                .addSnapshotListener(new EventListener<QuerySnapshot>() {
+                    @Override
+                    public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                        if (error != null){
+                            Log.e("teste",error.getMessage());
+
+                        }
+                        for (DocumentChange dc : value.getDocumentChanges()){
+                            if (dc.getType()==DocumentChange.Type.ADDED){
+
+                                userList.add(dc.getDocument().toObject(User.class));
+
+                            }
+                            adapter.notifyDataSetChanged();
+                        }
+                    }
+                });
+    }
 }
 
 

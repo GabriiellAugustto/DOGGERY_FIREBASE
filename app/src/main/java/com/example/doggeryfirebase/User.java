@@ -7,7 +7,7 @@ public class User {
 
     String bio;
 
-
+    public User (){}
 
   public User(String nome, String telefone, String foto, String bio) {
         this.nome = nome;
