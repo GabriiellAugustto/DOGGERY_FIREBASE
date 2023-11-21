@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center"
-        android:background="#DCE1CEF3">
+        android:background="#AF78E0">
 
         <ImageButton
             android:id="@+id/btnvoltar"
@@ -33,56 +33,56 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:gravity="center"
-        android:orientation="horizontal">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="350dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:contentDescription="localização"
-            app:boxBackgroundColor="#fff"
-            app:boxBackgroundMode="outline"
-            app:boxCornerRadiusBottomEnd="30dp"
-            app:boxCornerRadiusBottomStart="30dp"
-            app:boxCornerRadiusTopEnd="30dp"
-            app:boxCornerRadiusTopStart="30dp"
-            app:boxStrokeColor="#090A0E">
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:contentDescription="localização"
+                app:boxBackgroundColor="#fff"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="30dp"
+                app:boxCornerRadiusBottomStart="30dp"
+                app:boxCornerRadiusTopEnd="30dp"
+                app:boxCornerRadiusTopStart="30dp"
+                app:boxStrokeColor="#090A0E">
 
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/txtUsuario"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:drawableLeft="@drawable/search_maps"
-                android:gravity="center"
-                android:hint="Minha Localização"
-                android:maxLength="100"
-                android:padding="20dp" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtUsuario"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:drawableLeft="@drawable/search_maps"
+                    android:gravity="center"
+                    android:hint="Minha Localização"
+                    android:maxLength="100"
+                    android:padding="20dp" />
 
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-    </LinearLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
 
-    <TextView
+        </LinearLayout>
+
+        <TextView
         android:textColor="#000"
-        android:layout_margin="20sp"
+        android:layout_margin="10sp"
         android:textStyle="bold"
         android:textSize="30sp"
-        android:layout_gravity="center_horizontal"
+        android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="DogWalkers" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_gravity="center"
-        android:layout_width="300dp"
+        android:layout_width="370dp"
         android:layout_height="match_parent"
         android:id="@+id/idListaUser"
         />

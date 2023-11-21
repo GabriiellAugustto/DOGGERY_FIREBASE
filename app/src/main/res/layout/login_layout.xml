@@ -64,6 +64,7 @@
                 app:boxCornerRadiusBottomStart="30dp"
                 app:boxCornerRadiusTopEnd="30dp"
                 app:boxCornerRadiusTopStart="30dp"
+                app:passwordToggleEnabled="true"
                 app:boxStrokeColor="#090A0E">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -73,7 +74,8 @@
                     android:drawableRight="@drawable/key"
                     android:hint="Senha"
                     android:maxLength="100"
-                    android:padding="20dp"/>
+                    android:padding="20dp"
+                    android:password="true" />
 
             </com.google.android.material.textfield.TextInputLayout>
 

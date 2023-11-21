@@ -17,14 +17,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_gravity="top"
-            android:background="#B3A455EB">
+            android:layout_gravity="top
+"
+            android:background="#AF78E0"
+            android:gravity="center">
 
 
 
             <ImageView
                 android:id="@+id/ibperfil"
-                android:layout_marginLeft="160dp"
+               android:layout_gravity="center"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:background="#00FFFFFF"
@@ -34,10 +36,20 @@
 
         </LinearLayout>
 
+        <TextView
+            android:textColor="#000"
+            android:layout_margin="10sp"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contatos" />
+
         <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="300dp"
+            android:layout_width="370dp"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="5dp"
             android:layout_height="match_parent"
             android:id="@+id/chat2list"/>
 

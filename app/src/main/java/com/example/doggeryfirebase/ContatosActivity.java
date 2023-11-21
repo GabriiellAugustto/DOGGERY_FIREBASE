@@ -34,14 +34,14 @@ public class ContatosActivity extends AppCompatActivity {
         setContentView(R.layout.contatos_layout);
 
         contatoslist = findViewById(R.id.chat2list);
-        contatoslist.setLayoutManager(new GridLayoutManager(getApplicationContext(), 1));
+        contatoslist.setLayoutManager(new GridLayoutManager(getApplicationContext(), 2));
         contatoslist.setHasFixedSize(true);
         db= FirebaseFirestore.getInstance();
         userList = new ArrayList<>();
         adapterChat2 = new MyAdapterChat2(getApplicationContext(),userList);
         contatoslist.setAdapter(adapterChat2);
         puxandodobd();
-        userList.add(new User());
+
     }
 
     private void puxandodobd() {

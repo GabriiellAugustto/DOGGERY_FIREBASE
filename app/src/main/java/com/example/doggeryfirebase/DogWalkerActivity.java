@@ -58,10 +58,9 @@ public class DogWalkerActivity extends AppCompatActivity {
 
         idListaUser = findViewById(R.id.idListaUser);
         idListaUser.setHasFixedSize(true);
-        idListaUser.setLayoutManager(new GridLayoutManager(getApplicationContext(),1));
+        idListaUser.setLayoutManager(new GridLayoutManager(getApplicationContext(),2));
         db = FirebaseFirestore.getInstance();
         userList = new ArrayList<>();
-        userList.add(new User());
         adapter = new MyAdapter(getApplicationContext(),userList);
         idListaUser.setAdapter(adapter);
 
