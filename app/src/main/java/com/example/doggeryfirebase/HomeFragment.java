@@ -44,6 +44,15 @@ public class HomeFragment extends Fragment {
         ImageButton ibchat = (ImageButton) view.findViewById(R.id.btnchat);
         CardView ibwalker = (CardView) view.findViewById(R.id.btndogwalker);
         TextView idnome = (TextView) view.findViewById(R.id.idnome1);
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) CardView pefcard= (CardView) view.findViewById(R.id.pefcard);
+
+
+        pefcard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity().getApplicationContext(), PerfilActivity.class));
+            }
+        });
 
 
         ibperfil.setOnClickListener(new View.OnClickListener() {
