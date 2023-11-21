@@ -15,13 +15,16 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.carousel.CarouselLayoutManager;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
@@ -35,8 +38,8 @@ public class DogWalkerActivity extends AppCompatActivity {
     RecyclerView idListaUser;
 
     ImageView btnvoltar;
-    FirebaseFirestore db = FirebaseFirestore.getInstance();
-
+    MyAdapter adapter;
+    FirebaseFirestore db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,16 +55,29 @@ public class DogWalkerActivity extends AppCompatActivity {
             }
         });
 
+
         idListaUser = findViewById(R.id.idListaUser);
+        idListaUser.setHasFixedSize(true);
+        idListaUser.setLayoutManager(new GridLayoutManager(getApplicationContext(),1));
+
+        db = FirebaseFirestore.getInstance();
+        userList = new ArrayList<>();
+        adapter = new MyAdapter(getApplicationContext(),userList);
+
+
+        idListaUser = findViewById(R.id.idListaUser);
+        userList = new ArrayList<>();
 
         userList = new ArrayList<>();
-        userList.add(new User("","","",""));
-        userList.add(new User("","","",""));
-        userList.add(new User("","","",""));
-        userList.add(new User("","","",""));
-        userList.add(new User("","","",""));
+        userList.add(new User("", "", "", ""));
+        userList.add(new User("", "", "", ""));
+        userList.add(new User("", "", "", ""));
+        userList.add(new User("", "", "", ""));
+        userList.add(new User("", "", "", ""));
+
 
         MyAdapter adapter = new MyAdapter(getApplicationContext(), userList);
+
 
         idListaUser.setLayoutManager(new GridLayoutManager(getApplicationContext(), 1));
 
@@ -69,7 +85,7 @@ public class DogWalkerActivity extends AppCompatActivity {
 
         idListaUser.setAdapter(adapter);
 
-    }
+}
 }
 
 

@@ -7,6 +7,16 @@ public class User {
 
     String bio;
 
+
+
+  public User(String nome, String telefone, String foto, String bio) {
+        this.nome = nome;
+        Telefone = telefone;
+        this.foto = foto;
+        this.bio = bio;
+    }
+
+
     public String getBio() {
         return bio;
     }
@@ -15,12 +25,6 @@ public class User {
         this.bio = bio;
     }
 
-    public User(String nome, String telefone, String foto, String bio) {
-        this.nome = nome;
-        Telefone = telefone;
-        this.foto = foto;
-        this.bio = bio;
-    }
 
     public String getNome() {
         return nome;

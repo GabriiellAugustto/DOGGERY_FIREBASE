@@ -22,39 +22,54 @@
                 android:backgroundTint="#00FFFFFF"
                 android:contentDescription="chat"
                 android:src="@drawable/chat"
+                android:layout_marginTop="10dp"
                 android:layout_gravity="right"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
-            android:orientation="horizontal"
-            android:layout_gravity="left">
+            android:orientation="horizontal">
 
-            <ImageButton
+            <androidx.cardview.widget.CardView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="20dp"
+                android:backgroundTint="#685453"
+                app:cardCornerRadius="70dp">
+
+            <ImageView
                 android:id="@+id/ibperfil"
+                android:scaleType="centerCrop"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
                 android:background="#00FFFFFF"
                 android:contentDescription="perfil"
-                android:src="@drawable/icon_menu" />
+                android:src="@drawable/avatarh" />
+            </androidx.cardview.widget.CardView>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_margin="10dp"
+                android:layout_marginLeft="10dp"
+                android:text="Olá,"
+                android:textSize="18sp"/>
 
-                android:text="Olá, Doguinho!"
-                android:textSize="18sp" />
+            <TextView
+                android:id="@+id/idnome1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text=" Doguinho!"
+                android:textSize="20sp" />
 
         </LinearLayout>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="3dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="70dp"
             android:background="#A455EB" />
 
         <LinearLayout
