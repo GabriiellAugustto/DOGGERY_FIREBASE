@@ -136,7 +136,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:gravity="center"
-            android:text="DogWlaker"
+            android:text="DogWalker"
             android:textColor="#111"
             android:textSize="18sp"
             android:textStyle="bold" />
