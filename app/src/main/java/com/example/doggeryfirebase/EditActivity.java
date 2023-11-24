@@ -83,6 +83,7 @@ public class EditActivity extends AppCompatActivity {
                 String telefone = foneed.getText().toString();
                 String bio = bioed.getText().toString();
 
+
                 if (nome.isEmpty() || telefone.isEmpty() || bio.isEmpty()) {
 
                     Snackbar snackbar = Snackbar.make(v, "Campos em braco", Snackbar.LENGTH_SHORT);
@@ -112,6 +113,7 @@ public class EditActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI);
                 startActivityForResult(Intent.createChooser(intent, "Escolha Foto de Perfil"), 1);
+
 
             }
         });

@@ -32,7 +32,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.HashMap;
 import java.util.Map;
 
-public class CadastroActivity extends AppCompatActivity {
+public class    CadastroActivity extends AppCompatActivity {
 
     EditText edtnome, edtemail, edtsenha, edtfone;
     Button btcad;

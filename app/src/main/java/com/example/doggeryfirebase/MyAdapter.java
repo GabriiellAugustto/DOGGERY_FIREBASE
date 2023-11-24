@@ -44,6 +44,7 @@ public class MyAdapter  extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
         holder.nomecard.setText(userList.get(position).getNome());
         holder.fonecard.setText(userList.get(position).getTelefone());
+        holder.biocard.setText(userList.get(position).getBio());
         
 
         holder.cardperfil.setOnClickListener(new View.OnClickListener() {
@@ -54,6 +55,7 @@ public class MyAdapter  extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
                 intent.putExtra("Nome",userList.get(position).getNome());
                 intent.putExtra("Telefone",userList.get(position).getTelefone());
                 intent.putExtra("Imagem",userList.get(position).getFoto());
+                intent.putExtra("Bio",userList.get(position).getBio());
 
                 context.startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
             }
@@ -68,6 +70,7 @@ public class MyAdapter  extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
+        TextView biocard;
         TextView nomecard;
         ImageView imgcard;
         TextView fonecard;
@@ -78,6 +81,7 @@ public class MyAdapter  extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             fonecard = itemView.findViewById(R.id.fonecard);
             imgcard = itemView.findViewById(R.id.imgcard);
             cardperfil = itemView.findViewById(R.id.cardperfil);
+            biocard  = itemView.findViewById(R.id.biocard);
         }
     }
 }

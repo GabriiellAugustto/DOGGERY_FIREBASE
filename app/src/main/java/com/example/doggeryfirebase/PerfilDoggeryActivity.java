@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.material.appbar.MaterialToolbar;
+import com.squareup.picasso.Picasso;
 
 public class PerfilDoggeryActivity extends AppCompatActivity {
 
@@ -40,14 +41,14 @@ public class PerfilDoggeryActivity extends AppCompatActivity {
         Intent intent= getIntent();
 
         String nome,telefone;
-        int imagem;
+        String imagem;
 
         nome = intent.getExtras().getString("Nome");
         telefone = intent.getExtras().getString("Telefone");
-        imagem = intent.getExtras().getInt("Imagem");
+        imagem = intent.getExtras().getString("Imagem");
 
         nomeper.setText(nome);
         foneper.setText(telefone);
-        imgper.setImageResource(imagem);
+        Picasso.get().load(imagem).into(imgper);
     }
 }

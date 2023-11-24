@@ -77,12 +77,14 @@ public class DogWalkerActivity extends AppCompatActivity {
                     public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
                         if (error != null){
                             Log.e("teste",error.getMessage());
+                            return;
 
                         }
                         for (DocumentChange dc : value.getDocumentChanges()){
                             if (dc.getType()==DocumentChange.Type.ADDED){
 
                                 userList.add(dc.getDocument().toObject(User.class));
+
 
                             }
                             adapter.notifyDataSetChanged();
