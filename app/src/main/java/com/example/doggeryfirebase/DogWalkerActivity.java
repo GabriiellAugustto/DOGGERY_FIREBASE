@@ -28,6 +28,7 @@ import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.squareup.picasso.Picasso;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -82,9 +83,7 @@ public class DogWalkerActivity extends AppCompatActivity {
                         }
                         for (DocumentChange dc : value.getDocumentChanges()){
                             if (dc.getType()==DocumentChange.Type.ADDED){
-
                                 userList.add(dc.getDocument().toObject(User.class));
-
 
                             }
                             adapter.notifyDataSetChanged();

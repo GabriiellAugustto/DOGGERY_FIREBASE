@@ -28,7 +28,7 @@ public class MyAdapterAgenda  extends RecyclerView.Adapter<MyAdapterAgenda.ViewH
         View view;
 
         LayoutInflater inflater = LayoutInflater.from(context);
-        view = inflater.inflate(R.layout.user_modelo,parent,false);
+        view = inflater.inflate(R.layout.user_modelo_agenda,parent,false);
 
         return new ViewHolder(view);
     }
@@ -37,7 +37,12 @@ public class MyAdapterAgenda  extends RecyclerView.Adapter<MyAdapterAgenda.ViewH
     public void onBindViewHolder(@NonNull MyAdapterAgenda.ViewHolder holder, int position) {
 
         holder.nomecard.setText(userList.get(position).getNome());
-        holder.fonecard.setText(userList.get(position).getTelefone());
+        holder.checage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
 
         }
 
@@ -50,14 +55,13 @@ public class MyAdapterAgenda  extends RecyclerView.Adapter<MyAdapterAgenda.ViewH
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView nomecard;
-        TextView fonecard;
-        CardView cardperfil;
+        TextView checage;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
             nomecard = itemView.findViewById(R.id.nomecard);
-            fonecard = itemView.findViewById(R.id.fonecard);
-            cardperfil = itemView.findViewById(R.id.cardperfil);
+            checage = itemView.findViewById(R.id.checage);
+
         }
     }
 }

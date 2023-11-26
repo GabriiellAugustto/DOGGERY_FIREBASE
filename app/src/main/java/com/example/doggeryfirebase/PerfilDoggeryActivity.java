@@ -14,13 +14,13 @@ import com.squareup.picasso.Picasso;
 
 public class PerfilDoggeryActivity extends AppCompatActivity {
 
-    TextView nomeper,foneper;
+    TextView nomeper,foneper,bioper;
     ImageView imgper,btvolta;
 
 
 
 
-    @SuppressLint("WrongViewCast")
+    @SuppressLint({"WrongViewCast", "MissingInflatedId"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +29,7 @@ public class PerfilDoggeryActivity extends AppCompatActivity {
         nomeper = findViewById(R.id.nomeper);
         foneper = findViewById(R.id.foneper);
         imgper = findViewById(R.id.imgper);
+        bioper = findViewById(R.id.bioper);
         btvolta = findViewById(R.id.btvolta);
 
 
@@ -40,15 +41,17 @@ public class PerfilDoggeryActivity extends AppCompatActivity {
         });
         Intent intent= getIntent();
 
-        String nome,telefone;
+        String nome,telefone,bio;
         String imagem;
 
         nome = intent.getExtras().getString("Nome");
         telefone = intent.getExtras().getString("Telefone");
         imagem = intent.getExtras().getString("Imagem");
+        bio = intent.getExtras().getString("Bio");
 
         nomeper.setText(nome);
         foneper.setText(telefone);
+        bioper.setText(bio);
         Picasso.get().load(imagem).into(imgper);
     }
 }

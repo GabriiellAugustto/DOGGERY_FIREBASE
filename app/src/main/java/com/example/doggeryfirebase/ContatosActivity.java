@@ -5,8 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageButton;
 
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -28,10 +31,25 @@ public class ContatosActivity extends AppCompatActivity {
     MyAdapterChat2 adapterChat2;
     FirebaseFirestore db;
 
+    ImageButton voltar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.contatos_layout);
+
+
+
+        voltar = findViewById(R.id.btnvoltar);
+
+
+        voltar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), MenuActivity.class));
+            }
+        });
+
 
         contatoslist = findViewById(R.id.chat2list);
         contatoslist.setLayoutManager(new GridLayoutManager(getApplicationContext(), 2));

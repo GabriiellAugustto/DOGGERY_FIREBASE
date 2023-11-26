@@ -68,7 +68,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="40dp"
+            android:layout_margin="20dp"
             android:gravity="center"
             android:text="Agendamento"
             android:textColor="#111"
@@ -142,7 +142,7 @@
             android:textStyle="bold" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="300dp"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:id="@+id/listage"/>
@@ -152,7 +152,7 @@
             android:id="@+id/btAgendar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="40dp"
+            android:layout_margin="80dp"
             android:backgroundTint="#AF78E0"
             android:text="Agendar"
             android:textColor="@color/white"

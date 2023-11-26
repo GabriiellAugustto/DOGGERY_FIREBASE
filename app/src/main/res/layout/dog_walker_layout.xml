@@ -18,17 +18,25 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="center"
+        android:gravity="left"
         android:background="#AF78E0">
 
         <ImageButton
             android:id="@+id/btnvoltar"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:src="@drawable/back"
-            android:layout_marginRight="350dp"
             android:backgroundTint="#00FFFFFF"
             android:contentDescription="notificacao"/>
+
+        <ImageView
+            android:id="@+id/ibperfil"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="#00FFFFFF"
+            android:contentDescription="perfil"
+            android:layout_marginLeft="110dp"
+            android:src="@drawable/icon_menu" />
 
 
     </LinearLayout>

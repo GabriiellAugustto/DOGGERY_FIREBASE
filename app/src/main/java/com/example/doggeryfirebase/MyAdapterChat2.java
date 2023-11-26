@@ -31,7 +31,7 @@ public class MyAdapterChat2 extends RecyclerView.Adapter<MyAdapterChat2.ViewHold
         View view;
 
         LayoutInflater inflater = LayoutInflater.from(context);
-        view = inflater.inflate(R.layout.user_modelo,parent,false);
+        view = inflater.inflate(R.layout.user_modelo_chat,parent,false);
 
         return new ViewHolder(view);
 

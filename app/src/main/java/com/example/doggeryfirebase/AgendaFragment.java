@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,11 +17,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QuerySnapshot;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -34,6 +38,7 @@ public class AgendaFragment extends Fragment {
     List<User> userList;
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
+    MyAdapterAgenda adapterAgenda;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -46,17 +51,50 @@ public class AgendaFragment extends Fragment {
 
       RecyclerView listaage = (RecyclerView) view.findViewById(R.id.listage);
 
-        userList = new ArrayList<>();
-
-
-
-        MyAdapterAgenda adapter = new MyAdapterAgenda(getContext(),userList);
-
-        listaage.setLayoutManager(new GridLayoutManager(getContext(),1));
-
+        listaage.setLayoutManager(new GridLayoutManager(getContext(), 1));
         listaage.setHasFixedSize(true);
+        db= FirebaseFirestore.getInstance();
+        userList = new ArrayList<>();
+        adapterAgenda = new MyAdapterAgenda(getContext(),userList);
+        listaage.setAdapter(adapterAgenda);
 
-        listaage.setAdapter(adapter);
+        db.collection("Usuarios")
+                .orderBy("nome", Query.Direction.DESCENDING)
+                .addSnapshotListener(new EventListener<QuerySnapshot>() {
+                    @Override
+                    public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                        if (error != null){
+                            Log.e("teste",error.getMessage());
+                            return;
+                        }
+                        for (DocumentChange dc : value.getDocumentChanges()){
+                            if (dc.getType()==DocumentChange.Type.ADDED){
+                                userList.add(dc.getDocument().toObject(User.class));
+                            }
+                            adapterAgenda.notifyDataSetChanged();
+                        }
+                    }
+                });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

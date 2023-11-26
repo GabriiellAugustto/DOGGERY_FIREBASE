@@ -13,6 +13,7 @@ import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 
@@ -39,6 +40,8 @@ public class    CadastroActivity extends AppCompatActivity {
     String[] mensagens = {"Prencha Todos os Campos", "Cadastro Realizado Com Sucesso"};
     ImageView imgvoltar;
 
+    CheckBox chec;
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +54,7 @@ public class    CadastroActivity extends AppCompatActivity {
         btcad = findViewById(R.id.btcad);
         edtfone = findViewById(R.id.edtfone);
         imgvoltar = findViewById(R.id.imgvoltar);
+        chec = findViewById(R.id.chec);
 
 
         //cadastrando  e autentifincando usu//
@@ -58,12 +62,15 @@ public class    CadastroActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                if (chec.isChecked()) {
+
+
                 String nome = edtnome.getText().toString();
                 String email = edtemail.getText().toString();
                 String senha = edtsenha.getText().toString();
 
                 if (nome.isEmpty() || email.isEmpty() || senha.isEmpty()) {
-                    Snackbar snackbar = Snackbar.make(v, mensagens[0], Snackbar.LENGTH_SHORT);
+                    Snackbar snackbar = Snackbar.make(v, "Aceite os termos ", Snackbar.LENGTH_SHORT);
                     snackbar.setBackgroundTint(Color.WHITE);
                     snackbar.setTextColor(Color.BLACK);
                     snackbar.show();
@@ -104,8 +111,17 @@ public class    CadastroActivity extends AppCompatActivity {
                                 }
                             });
                 }
+            }else {
+                    Snackbar snackbar = Snackbar.make(v, mensagens[0], Snackbar.LENGTH_SHORT);
+                    snackbar.setBackgroundTint(Color.WHITE);
+                    snackbar.setTextColor(Color.BLACK);
+                    snackbar.show();
+
+                }
             }
+
         });
+
         imgvoltar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

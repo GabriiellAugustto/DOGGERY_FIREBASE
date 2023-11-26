@@ -4,97 +4,130 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fundo"
     android:orientation="vertical"
-    tools:context=".PerfilDoggeryActivity"
-    android:background="@drawable/fundo">
+    tools:context=".PerfilDoggeryActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="#B3FFFFFF">
+        android:background="#B3FFFFFF"
+        android:orientation="vertical">
 
 
+        <ImageView
+            android:id="@+id/btvolta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:src="@drawable/back" />
 
-
-    <ImageView
-        android:id="@+id/btvolta"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/back"
-        android:layout_gravity="left"/>
-
-
-    <TextView
-        android:id="@+id/nomeper"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20sp"
-        android:layout_marginBottom="10sp"
-        android:shadowColor="#000"
-        android:shadowRadius="5"
-        android:text="Nome"
-        android:textAllCaps="true"
-        android:textColor="#111"
-        android:textSize="30sp"
-        android:textStyle="bold"
-
-        />
-
-    <ImageView
-        android:id="@+id/imgper"
-        android:layout_width="250dp"
-        android:layout_height="300dp"
-        android:layout_gravity="center_horizontal"
-        android:scaleType="centerCrop"
-        android:src="@drawable/avatarh" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="5dp"
-        android:gravity="center_horizontal"
-        android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/nomeper"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="Telefone:"
-            android:textColor="#000"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:layout_marginTop="20sp"
+            android:layout_marginBottom="10sp"
+            android:shadowRadius="5"
+            android:text="Nome"
+            android:textAllCaps="true"
+            android:textColor="#111"
+            android:textSize="30sp"
+            android:textStyle="bold"
 
-        <TextView
-            android:id="@+id/foneper"
+            />
+
+        <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginLeft="10sp"
-            android:text="35988219738"
-            android:textColor="#000"
-            android:textSize="20sp" />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:layout_marginTop="50dp">
+            android:layout_gravity="center"
+            app:cardCornerRadius="120dp">
 
-        <Button
-            android:id="@+id/btnstart"
+            <ImageView
+                android:id="@+id/imgper"
+                android:layout_width="300dp"
+                android:layout_height="280dp"
+                android:layout_gravity="center_horizontal"
+                android:scaleType="centerCrop"
+                android:src="@drawable/avatarh" />
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Telefone:"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/foneper"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="10sp"
+                android:text="35988219738"
+                android:textColor="#000"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Bio:"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/bioper"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="10sp"
+                android:text="Gosto de Cachorro"
+                android:textColor="#000"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
             android:gravity="center"
-            style="@style/Widget.Material3.Button"
-            android:layout_width="180dp"
-            android:layout_height="60dp"
-            android:backgroundTint="#A455EB"
-            android:text="Start!"
-            android:textColor="#fff"
-            android:textSize="20sp" />
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btnstart"
+                style="@style/Widget.Material3.Button"
+                android:layout_width="180dp"
+                android:layout_height="60dp"
+                android:backgroundTint="#A455EB"
+                android:gravity="center"
+                android:text="Start!"
+                android:textColor="#fff"
+                android:textSize="20sp" />
+        </LinearLayout>
     </LinearLayout>
-</LinearLayout>
 </LinearLayout>
 

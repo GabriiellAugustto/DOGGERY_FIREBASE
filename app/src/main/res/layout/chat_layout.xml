@@ -18,17 +18,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_gravity="top"
-            android:background="#B3A455EB">
+            android:gravity="left"
+            android:background="#AF78E0">
 
+            <ImageButton
+                android:id="@+id/btnvoltar"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/back"
+                android:backgroundTint="#00FFFFFF"
+                android:contentDescription="notificacao"/>
 
             <ImageView
                 android:id="@+id/ibperfil"
-                android:layout_marginLeft="160dp"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:background="#00FFFFFF"
                 android:contentDescription="perfil"
+                android:layout_marginLeft="110dp"
                 android:src="@drawable/icon_menu" />
 
 
@@ -40,112 +47,13 @@
             android:orientation="vertical"
             android:gravity="bottom">
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/listmsg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Mensagem"
-                android:textSize="18sp"
-                android:layout_gravity="right"
-                android:layout_marginBottom="15dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Mensagem"
-                android:textSize="18sp"
-                android:layout_gravity="left"
-                android:layout_marginBottom="15dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Mensagem"
-                android:textSize="18sp"
-                android:layout_gravity="right"
-                android:layout_marginBottom="15dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Mensagem"
-                android:textSize="18sp"
-                android:layout_gravity="left"
-                android:layout_marginBottom="15dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Mensagem"
-                android:textSize="18sp"
-                android:layout_gravity="right"
-                android:layout_marginBottom="15dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Mensagem"
-                android:textSize="18sp"
-                android:layout_gravity="left"
-                android:layout_marginBottom="15dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Mensagem"
-                android:textSize="18sp"
-                android:layout_gravity="right"
-                android:layout_marginBottom="15dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Mensagem"
-                android:textSize="18sp"
-                android:layout_gravity="left"
-                android:layout_marginBottom="15dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Mensagem"
-                android:textSize="18sp"
-                android:layout_gravity="right"
-                android:layout_marginBottom="15dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Mensagem"
-                android:textSize="18sp"
-                android:layout_gravity="left"
-                android:layout_marginBottom="15dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Mensagem"
-                android:textSize="18sp"
-                android:layout_gravity="right"
-                android:layout_marginBottom="15dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Mensagem"
-                android:textSize="18sp"
-                android:layout_gravity="left"
-                android:layout_marginBottom="15dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Mensagem"
-                android:textSize="18sp"
-                android:layout_gravity="right"
-                android:layout_marginBottom="15dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Mensagem"
-                android:textSize="18sp"
-                android:layout_gravity="left"
-                android:layout_marginBottom="15dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Mensagem"
-                android:textSize="18sp"
-                android:layout_gravity="right"
-                android:layout_marginBottom="15dp"/>
+            </androidx.recyclerview.widget.RecyclerView>
 
 
 
@@ -157,12 +65,16 @@
         android:layout_height="match_parent"
         android:gravity="bottom"
         >
+
         <EditText
+            android:id="@+id/msg"
+            android:layout_alignParentStart="true"
             android:layout_width="350dp"
-            android:layout_height="80dp"
+            android:layout_height="60dp"
             android:hint="Mensagem" />
 
         <ImageButton
+            android:id="@+id/enviar"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:src="@drawable/send"
