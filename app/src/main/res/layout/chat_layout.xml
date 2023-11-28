@@ -65,13 +65,26 @@
         android:layout_height="match_parent"
         android:gravity="bottom"
         >
-
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:contentDescription="Nome"
+            app:boxBackgroundColor="#fff"
+            app:boxBackgroundMode="outline"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="5dp"
+            app:boxCornerRadiusBottomEnd="30dp"
+            app:boxCornerRadiusBottomStart="30dp"
+            app:boxCornerRadiusTopEnd="30dp"
+            app:boxCornerRadiusTopStart="30dp"
+            app:boxStrokeColor="#090A0E">
         <EditText
             android:id="@+id/msg"
-            android:layout_alignParentStart="true"
             android:layout_width="350dp"
             android:layout_height="60dp"
             android:hint="Mensagem" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <ImageButton
             android:id="@+id/enviar"
@@ -81,6 +94,7 @@
             android:background="#00AF78E0"
             android:scaleType="centerCrop"
             android:layout_gravity="bottom"
+            android:layout_marginBottom="20dp"
             android:contentDescription="Enviar"
             />
     </LinearLayout>
