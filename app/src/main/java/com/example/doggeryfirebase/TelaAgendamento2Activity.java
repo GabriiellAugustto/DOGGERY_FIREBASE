@@ -2,21 +2,20 @@ package com.example.doggeryfirebase;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.ClipData;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TableLayout;
 
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.material.carousel.CarouselLayoutManager;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.DocumentReference;
@@ -28,85 +27,89 @@ import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.squareup.picasso.Picasso;
 
-import java.io.File;
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Iterator;
 import java.util.List;
 
-public class DogWalkerActivity extends AppCompatActivity {
-    List<User> userList;
+public class TelaAgendamento2Activity extends AppCompatActivity {
 
-    RecyclerView idListaUser;
+    List<Agenda> agendaList;
+    RecyclerView agerecy;
+    AdaptadorAgenda adaptadorAgenda;
+    FirebaseFirestore bd;
 
-    ImageView btnvoltar, ivdog;
-    MyAdapter adapter;
-    FirebaseFirestore db;
+    ImageButton btvolt;
+    ImageView ivage;
 
+
+
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.dog_walker_layout);
-        ivdog = findViewById(R.id.ivdog);
+        setContentView(R.layout.tela_agendamento2_layout);
 
-        btnvoltar = findViewById(R.id.btnvoltar);
+        ivage = findViewById(R.id.ivage);
+        btvolt = findViewById(R.id.btvolt);
 
-        btnvoltar.setOnClickListener(new View.OnClickListener() {
+        btvolt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), MenuActivity.class));
+                Intent intent = new Intent(TelaAgendamento2Activity.this, MenuActivity.class);
+                startActivity(intent);
+                finish();
+
             }
         });
 
-        idListaUser = findViewById(R.id.idListaUser);
-        idListaUser.setHasFixedSize(true);
-        idListaUser.setLayoutManager(new GridLayoutManager(getApplicationContext(),2));
-        db = FirebaseFirestore.getInstance();
-        userList = new ArrayList<>();
-        adapter = new MyAdapter(getApplicationContext(),userList);
-        idListaUser.setAdapter(adapter);
 
 
-        puxandodobd();
+        agerecy = findViewById(R.id.agerecy);
+        agerecy.setHasFixedSize(true);
+        agerecy.setLayoutManager(new GridLayoutManager(getApplicationContext(),2));
+        bd = FirebaseFirestore.getInstance();
+        agendaList = new ArrayList<>();
+        adaptadorAgenda= new AdaptadorAgenda(getApplicationContext(),agendaList);
+        agerecy.setAdapter(adaptadorAgenda);
+
+
+        puxandodadosdobanco();
+
+
 
         Uri fotousu = (Uri) FirebaseAuth.getInstance().getCurrentUser().getPhotoUrl();
         String nomeusu = (String) FirebaseAuth.getInstance().getCurrentUser().getUid();
-        DocumentReference documentReference = db.collection("Usuarios").document(nomeusu);
+        DocumentReference documentReference = bd.collection("Usuarios").document(nomeusu);
         documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
                 if (value != null) {
-                    Picasso.get().load(value.getString("foto")).into(ivdog);
+                    Picasso.get().load(value.getString("foto")).into(ivage);
                 }
             }
         });
 
-}
 
-    private void puxandodobd() {
-        db.collection("Usuarios")
-                .orderBy("nome", Query.Direction.DESCENDING)
+    }
+
+    private void puxandodadosdobanco(){
+
+        bd.collection("Agenda")
+                .orderBy("Dia", Query.Direction.DESCENDING)
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
                     @Override
                     public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
-                        if (error != null){
-                            Log.e("teste",error.getMessage());
+                        if (error != null) {
+                            Log.e("teste", error.getMessage());
                             return;
-
                         }
-                        for (DocumentChange dc : value.getDocumentChanges()){
-                            if (dc.getType()==DocumentChange.Type.ADDED){
-                                userList.add(dc.getDocument().toObject(User.class));
-
+                        for (DocumentChange dc : value.getDocumentChanges()) {
+                            if (dc.getType() == DocumentChange.Type.ADDED) {
+                                agendaList.add(dc.getDocument().toObject(Agenda.class));
 
                             }
-                            adapter.notifyDataSetChanged();
+                            adaptadorAgenda.notifyDataSetChanged();
                         }
                     }
                 });
     }
 }
-
-
-
-

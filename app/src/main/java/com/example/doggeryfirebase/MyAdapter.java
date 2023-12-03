@@ -3,28 +3,21 @@ package com.example.doggeryfirebase;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.squareup.picasso.Picasso;
-
 import java.util.List;
-import java.util.ResourceBundle;
+
 
 public class MyAdapter  extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
     private Context context;
     private List<User> userList;
+
 
     public MyAdapter(Context context,List<User> userList){
         this.context = context;
@@ -84,7 +77,6 @@ public class MyAdapter  extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             super(itemView);
             nomecard = itemView.findViewById(R.id.nomecard);
             fonecard = itemView.findViewById(R.id.fonecard);
-
             cardperfil = itemView.findViewById(R.id.cardperfil);
             biocard  = itemView.findViewById(R.id.biocard);
         }

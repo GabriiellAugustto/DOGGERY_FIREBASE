@@ -5,19 +5,25 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentChange;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,12 +39,15 @@ public class ContatosActivity extends AppCompatActivity {
 
     ImageButton voltar;
 
+    ImageView ivcont;
+
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.contatos_layout);
 
-
+        ivcont = findViewById(R.id.ivcont);
 
         voltar = findViewById(R.id.btnvoltar);
 
@@ -81,6 +90,19 @@ public class ContatosActivity extends AppCompatActivity {
                     }
                 });
 
+
+
+        Uri fotousu = (Uri) FirebaseAuth.getInstance().getCurrentUser().getPhotoUrl();
+        String nomeusu = (String) FirebaseAuth.getInstance().getCurrentUser().getUid();
+        DocumentReference documentReference = db.collection("Usuarios").document(nomeusu);
+        documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                if (value != null) {
+                    Picasso.get().load(value.getString("foto")).into(ivcont);
+                }
+            }
+        });
 
     }
 }

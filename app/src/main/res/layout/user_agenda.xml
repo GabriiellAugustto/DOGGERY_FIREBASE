@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="150dp"
+    android:layout_height="180dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="30dp"
+    android:backgroundTint="#AF78E0"
+    android:layout_margin="5dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Agenda"
+        android:textColor="#111"
+        android:layout_margin="5dp"
+        android:textSize="20dp"
+        />
+
+        <View
+        android:layout_width="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_height="1dp"
+        android:background="#111"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="60dp">
+
+        <TextView
+            android:id="@+id/dia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="#111"
+            android:text="Dia"
+            android:textSize="15dp"
+            />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="30dp"
+            android:background="#111"
+            android:layout_margin="6dp"/>
+
+        <TextView
+            android:id="@+id/mes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="#111"
+            android:text="Mes"
+            android:textSize="15dp" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="30dp"
+            android:background="#111"
+            android:layout_margin="6dp"/>
+
+        <TextView
+            android:id="@+id/ano"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Anooo"
+            android:textColor="#111"
+            android:textSize="15dp"
+            />
+</LinearLayout>
+    <View
+        android:layout_width="120dp"
+        android:layout_gravity="center"
+        android:layout_height="1dp"
+        android:layout_marginTop="11dp"
+        android:background="#111"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginTop="115dp">
+
+        <TextView
+            android:id="@+id/hora"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Hora"
+            android:textColor="#111"
+            android:layout_margin="5dp"
+            android:textSize="17dp"/>
+
+        <View
+
+            android:layout_width="100dp"
+            android:layout_gravity="center"
+            android:layout_height="1dp"
+            android:background="#111"/>
+
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

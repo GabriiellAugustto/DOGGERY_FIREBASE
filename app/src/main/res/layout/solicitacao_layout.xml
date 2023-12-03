@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SolicitaçaoActivity"
+    android:background="@drawable/fundo">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80FFFFFF"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="left"
+            android:background="#AF78E0">
+
+            <ImageButton
+                android:id="@+id/btnvoltar"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/back"
+                android:backgroundTint="#00FFFFFF"
+                android:contentDescription="notificacao"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="30dp"
+                android:layout_marginLeft="110dp">
+
+                <ImageView
+                    android:id="@+id/ivsoli"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="#00FFFFFF"
+                    android:contentDescription="perfil"
+                    android:src="@drawable/icon_menu" />
+            </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:contentDescription="localização"
+            app:boxBackgroundColor="#fff"
+            android:layout_gravity="center"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="30dp"
+            app:boxCornerRadiusBottomStart="30dp"
+            app:boxCornerRadiusTopEnd="30dp"
+            app:boxCornerRadiusTopStart="30dp"
+            app:boxStrokeColor="#090A0E">
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtUsuario"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:drawableLeft="@drawable/search_maps"
+                android:gravity="center"
+                android:hint="Minha Localização"
+                android:maxLength="100"
+                android:padding="20dp"
+                android:textSize="18sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="30dp"
+        android:layout_margin="5dp">
+
+            <LinearLayout
+                android:layout_margin="20dp"
+                android:layout_width="380dp"
+                android:layout_height="380dp"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/map"/>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="10dp"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btschat"
+                style="@style/Widget.Material3.Button"
+                android:layout_width="155dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:backgroundTint="#AF78E0"
+                android:text="Chat"
+                android:layout_margin="10dp"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btsalvar"
+                style="@style/Widget.Material3.Button"
+                android:layout_width="155dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:backgroundTint="#AF78E0"
+                android:text="Cancelar"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+</LinearLayout>
+</LinearLayout>

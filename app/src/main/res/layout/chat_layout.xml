@@ -11,7 +11,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#B3FFFFFF"
+        android:background="#80FFFFFF"
         android:orientation="vertical">
 
         <LinearLayout
@@ -29,15 +29,6 @@
                 android:backgroundTint="#00FFFFFF"
                 android:contentDescription="notificacao"/>
 
-            <ImageView
-                android:id="@+id/ibperfil"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:background="#00FFFFFF"
-                android:contentDescription="perfil"
-                android:layout_marginLeft="110dp"
-                android:src="@drawable/icon_menu" />
-
 
         </LinearLayout>
 
@@ -45,63 +36,51 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:gravity="bottom">
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/listmsg"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="center">
-
-            </androidx.recyclerview.widget.RecyclerView>
+            android:gravity="bottom"/>
 
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom"
+            >
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:contentDescription="Nome"
+                app:boxBackgroundColor="#fff"
+                app:boxBackgroundMode="outline"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="10dp"
+                app:boxCornerRadiusBottomEnd="30dp"
+                app:boxCornerRadiusBottomStart="30dp"
+                app:boxCornerRadiusTopEnd="30dp"
+                app:boxCornerRadiusTopStart="30dp"
+                app:boxStrokeColor="#090A0E">
+                <EditText
+                    android:id="@+id/msg"
+                    android:layout_width="350dp"
+                    android:layout_height="60dp"
+                    android:hint="Mensagem" />
 
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageButton
+                android:id="@+id/enviar"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/send"
+                android:background="#00AF78E0"
+                android:scaleType="centerCrop"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="20dp"
+                android:contentDescription="Enviar"
+                />
         </LinearLayout>
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="bottom"
-        >
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            android:contentDescription="Nome"
-            app:boxBackgroundColor="#fff"
-            app:boxBackgroundMode="outline"
-            android:layout_marginBottom="8dp"
-            android:layout_marginLeft="5dp"
-            app:boxCornerRadiusBottomEnd="30dp"
-            app:boxCornerRadiusBottomStart="30dp"
-            app:boxCornerRadiusTopEnd="30dp"
-            app:boxCornerRadiusTopStart="30dp"
-            app:boxStrokeColor="#090A0E">
-        <EditText
-            android:id="@+id/msg"
-            android:layout_width="350dp"
-            android:layout_height="60dp"
-            android:hint="Mensagem" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <ImageButton
-            android:id="@+id/enviar"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/send"
-            android:background="#00AF78E0"
-            android:scaleType="centerCrop"
-            android:layout_gravity="bottom"
-            android:layout_marginBottom="20dp"
-            android:contentDescription="Enviar"
-            />
-    </LinearLayout>
-
-
 
 
 
     </LinearLayout>
-    </LinearLayout>
+</LinearLayout>

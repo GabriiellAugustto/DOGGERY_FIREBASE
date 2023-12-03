@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="#B3FFFFFF">
+        android:background="#80FFFFFF">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -28,14 +28,21 @@
                 android:backgroundTint="#00FFFFFF"
                 android:contentDescription="notificacao"/>
 
+            <androidx.cardview.widget.CardView
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="30dp"
+                android:layout_marginLeft="110dp">
+
             <ImageView
-                android:id="@+id/ibperfil"
+                android:id="@+id/ivcont"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:background="#00FFFFFF"
                 android:contentDescription="perfil"
-                android:layout_marginLeft="110dp"
                 android:src="@drawable/icon_menu" />
+
+            </androidx.cardview.widget.CardView>
 
 
         </LinearLayout>

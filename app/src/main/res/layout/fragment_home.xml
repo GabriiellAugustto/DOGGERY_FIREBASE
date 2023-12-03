@@ -11,7 +11,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#B3FFFFFF"
+        android:background="#80FFFFFF"
         android:orientation="vertical">
 
 
@@ -217,8 +217,7 @@
             android:layout_marginTop="500dp"
             android:layout_marginBottom="100dp"
             android:contentDescription="scroll"
-            android:gravity="center"
-            android:rotationX="5">
+            android:gravity="center">
 
 
             <LinearLayout

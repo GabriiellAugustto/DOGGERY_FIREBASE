@@ -5,6 +5,11 @@ public class Agenda {
     String Dia;
     String Mes;
 
+    String Ano;
+    String Hora;
+
+    public Agenda(){}
+
     public String getDia() {
         return Dia;
     }
@@ -44,6 +49,5 @@ public class Agenda {
         Hora = hora;
     }
 
-    String Ano;
-    String Hora;
+
 }
