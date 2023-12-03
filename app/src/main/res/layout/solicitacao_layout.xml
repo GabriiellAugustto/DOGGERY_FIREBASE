@@ -31,6 +31,7 @@
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="30dp"
+                android:backgroundTint="#AF78E0"
                 android:layout_marginLeft="110dp">
 
                 <ImageView
@@ -74,6 +75,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:cardCornerRadius="30dp"
+        android:backgroundTint="#AF78E0"
         android:layout_margin="5dp">
 
             <LinearLayout

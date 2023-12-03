@@ -45,31 +45,31 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
-            android:textColor="#111"
             android:text="Dia"
-            android:textSize="15dp"
+            android:textSize="18dp"
             />
 
         <View
             android:layout_width="1dp"
-            android:layout_height="30dp"
+            android:layout_height="20dp"
             android:background="#111"
-            android:layout_margin="6dp"/>
+            android:rotation="20"
+            android:layout_margin="5dp"/>
 
         <TextView
             android:id="@+id/mes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
-            android:textColor="#111"
             android:text="Mes"
-            android:textSize="15dp" />
+            android:textSize="18dp"/>
 
         <View
             android:layout_width="1dp"
-            android:layout_height="30dp"
+            android:layout_height="20dp"
             android:background="#111"
-            android:layout_margin="6dp"/>
+            android:rotation="20"
+            android:layout_margin="5dp"/>
 
         <TextView
             android:id="@+id/ano"
@@ -77,23 +77,16 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:text="Anooo"
-            android:textColor="#111"
-            android:textSize="15dp"
+            android:textSize="18dp"
             />
 </LinearLayout>
-    <View
-        android:layout_width="120dp"
-        android:layout_gravity="center"
-        android:layout_height="1dp"
-        android:layout_marginTop="11dp"
-        android:background="#111"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center"
-        android:layout_marginTop="115dp">
+        android:layout_marginTop="100dp">
 
         <TextView
             android:id="@+id/hora"
@@ -101,16 +94,8 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:text="Hora"
-            android:textColor="#111"
             android:layout_margin="5dp"
             android:textSize="17dp"/>
-
-        <View
-
-            android:layout_width="100dp"
-            android:layout_gravity="center"
-            android:layout_height="1dp"
-            android:background="#111"/>
 
 
     </LinearLayout>

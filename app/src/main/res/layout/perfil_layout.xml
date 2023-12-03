@@ -28,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:backgroundTint="#685453"
+            android:backgroundTint="#AF78E0"
             android:orientation="vertical"
             app:cardCornerRadius="80dp">
 

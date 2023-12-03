@@ -5,6 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="30dp"
     android:backgroundTint="#AF78E0"
+    android:layout_margin="5dp"
     android:id="@+id/cardperfil">
 
     <LinearLayout
