@@ -27,7 +27,7 @@
 
 <androidx.cardview.widget.CardView
         android:layout_width="350dp"
-        android:layout_height="420dp"
+        android:layout_height="490dp"
         android:layout_marginBottom="100dp"
         app:cardCornerRadius="30dp"
         android:layout_marginTop="10dp"
@@ -53,7 +53,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="280dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="40dp"
                 android:contentDescription="Nome"
                 app:boxBackgroundColor="#fff"
                 app:boxBackgroundMode="outline"
@@ -144,13 +144,45 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal"
+               android:layout_gravity="center"
+               android:gravity="center"
+               android:layout_margin="5dp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/face" />
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Fecebook"
+                   android:layout_marginRight="50dp"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/google"
+                />
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Google"/>
+
+           </LinearLayout>
+
             <CheckBox
                 android:id="@+id/chec"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Aceito os termos de usu! "
+                android:text="Aceito os termos de Uso !! "
                 android:layout_gravity="center"
-                android:textSize="13dp"/>
+                android:textSize="13sp"/>
 
             <Button
                 android:id="@+id/btcad"
@@ -158,10 +190,13 @@
                 android:layout_width="155dp"
                 android:layout_height="48dp"
                 android:layout_gravity="center"
-                android:layout_margin="5dp"
+                android:layout_margin="10dp"
                 android:backgroundTint="#AF78E0"
                 android:text="Sign Up"
                 android:textSize="20sp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+
+
+
 </LinearLayout>

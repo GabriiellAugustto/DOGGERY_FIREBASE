@@ -17,7 +17,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="350dp"
-        android:layout_height="320dp"
+        android:layout_height="380dp"
         android:layout_marginBottom="30dp"
         app:cardCornerRadius="30dp">
 
@@ -79,13 +79,44 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_margin="5dp">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/face" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fecebook"
+                    android:layout_marginRight="50dp"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/google"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Google"/>
+
+            </LinearLayout>
+
             <Button
                 android:id="@+id/btlogin"
                 style="@style/Widget.Material3.Button"
                 android:layout_width="155dp"
                 android:layout_height="48dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="15dp"
                 android:backgroundTint="#AF78E0"
                 android:text="Sign In"
                 android:textSize="20sp"/>
@@ -101,7 +132,7 @@
             android:textColor="#685453"
             android:textStyle="bold"
             android:textSize="18dp"
-            android:layout_marginTop="280dp"/>
+            android:layout_marginTop="300dp"/>
     </androidx.cardview.widget.CardView>
 
     <ProgressBar

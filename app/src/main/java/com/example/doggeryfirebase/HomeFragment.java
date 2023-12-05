@@ -47,6 +47,12 @@ public class HomeFragment extends Fragment {
         @SuppressLint({"MissingInflatedId", "LocalSuppress"}) CardView pefcard= (CardView) view.findViewById(R.id.pefcard);
 
 
+        idnome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(), PerfilActivity.class) );
+            }
+        });
         pefcard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

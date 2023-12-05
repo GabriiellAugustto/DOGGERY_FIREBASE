@@ -96,11 +96,12 @@ public class EditActivity extends AppCompatActivity {
 
                     SalvarFoto();
 
-
                     Snackbar snackbar = Snackbar.make(v, "Salvo com Sucessso", Snackbar.LENGTH_SHORT);
                     snackbar.setBackgroundTint(Color.WHITE);
                     snackbar.setTextColor(Color.BLACK);
                     snackbar.show();
+
+                    startActivity(new Intent(getApplicationContext(), PerfilActivity.class));
 
 
                 }

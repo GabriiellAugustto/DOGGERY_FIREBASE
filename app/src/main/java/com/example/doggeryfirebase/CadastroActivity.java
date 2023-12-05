@@ -69,7 +69,7 @@ public class    CadastroActivity extends AppCompatActivity {
                 String email = edtemail.getText().toString();
                 String senha = edtsenha.getText().toString();
 
-                if (nome.isEmpty() || email.isEmpty() || senha.isEmpty()) {
+                if (nome.isEmpty() || email.isEmpty() || senha.isEmpty()){
                     Snackbar snackbar = Snackbar.make(v, "Aceite os termos ", Snackbar.LENGTH_SHORT);
                     snackbar.setBackgroundTint(Color.WHITE);
                     snackbar.setTextColor(Color.BLACK);
@@ -88,6 +88,9 @@ public class    CadastroActivity extends AppCompatActivity {
                                         snackbar.setBackgroundTint(Color.WHITE);
                                         snackbar.setTextColor(Color.BLACK);
                                         snackbar.show();
+
+                                        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+
 
                                     } else {
                                         String erro;
@@ -119,7 +122,6 @@ public class    CadastroActivity extends AppCompatActivity {
 
                 }
             }
-
         });
 
         imgvoltar.setOnClickListener(new View.OnClickListener() {
